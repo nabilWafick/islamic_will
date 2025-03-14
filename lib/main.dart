@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_will/views/pages/main/home.page.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const IslamicWill());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class IslamicWill extends StatelessWidget {
+  const IslamicWill({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        body: HomePage(),
       ),
     );
   }
