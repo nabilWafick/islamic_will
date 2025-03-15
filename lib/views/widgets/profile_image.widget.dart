@@ -8,7 +8,7 @@ class ProfileImage extends StatelessWidget {
   final Color borderColor;
   final Color? backgroundColor;
   final bool? hideUserIcon;
-  final bool isCooperative;
+  final bool isGroup;
 
   const ProfileImage({
     super.key,
@@ -18,7 +18,7 @@ class ProfileImage extends StatelessWidget {
     required this.borderColor,
     this.backgroundColor,
     this.hideUserIcon,
-    this.isCooperative = false,
+    this.isGroup = false,
   });
 
   @override
@@ -30,7 +30,7 @@ class ProfileImage extends StatelessWidget {
           width: borderWidth,
           color: borderColor,
         ),
-        color: backgroundColor ?? AppColors.primary,
+        color: backgroundColor ?? AppColors.cardIconBackground,
       ),
       height: size,
       width: size,
@@ -40,13 +40,16 @@ class ProfileImage extends StatelessWidget {
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) {
             return Container(
-              color: backgroundColor ?? AppColors.primary,
+              // decoration: BoxDecoration(
+              //   color: backgroundColor ?? AppColors.cardIconBackground,
+              //   border: Border.all(width: .0),
+              // ),
               child: hideUserIcon == true
                   ? null
                   : Icon(
-                      isCooperative ? Icons.people : Icons.person,
+                      isGroup ? Icons.people : Icons.person,
                       size: size * .7,
-                      color: Colors.white,
+                      color: AppColors.iconColor,
                     ),
             );
           },
