@@ -124,7 +124,7 @@ class _MainPageState extends ConsumerState<MainPage> with SingleTickerProviderSt
                     width: 40,
                     child: Center(
                       child: Icon(
-                        Icons.people,
+                        Icons.people_rounded,
                         color: currentPage == 1 ? AppColors.primary : AppColors.secondaryText,
                       ),
                     ),
@@ -134,7 +134,7 @@ class _MainPageState extends ConsumerState<MainPage> with SingleTickerProviderSt
                     width: 40,
                     child: Center(
                       child: Icon(
-                        Icons.diamond,
+                        Icons.diamond_rounded,
                         color: currentPage == 2 ? AppColors.primary : AppColors.secondaryText,
                       ),
                     ),
@@ -148,7 +148,7 @@ class _MainPageState extends ConsumerState<MainPage> with SingleTickerProviderSt
                     width: 40,
                     child: Center(
                       child: Icon(
-                        Icons.favorite,
+                        Icons.favorite_rounded,
                         color: currentPage == 4 ? AppColors.primary : AppColors.secondaryText,
                       ),
                     ),
@@ -158,7 +158,7 @@ class _MainPageState extends ConsumerState<MainPage> with SingleTickerProviderSt
                     width: 40,
                     child: Center(
                       child: Icon(
-                        Icons.info,
+                        Icons.info_rounded,
                         color: currentPage == 5 ? AppColors.primary : AppColors.secondaryText,
                       ),
                     ),
@@ -168,7 +168,7 @@ class _MainPageState extends ConsumerState<MainPage> with SingleTickerProviderSt
                     width: 40,
                     child: Center(
                       child: Icon(
-                        Icons.settings,
+                        Icons.settings_rounded,
                         color: currentPage == 6 ? AppColors.primary : AppColors.secondaryText,
                       ),
                     ),

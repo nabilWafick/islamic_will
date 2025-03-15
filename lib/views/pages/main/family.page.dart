@@ -1,139 +1,84 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import 'package:islamic_will/utils/constants.util.dart';
+import 'package:islamic_will/views/widgets/item_card.widget.dart';
 import 'package:islamic_will/views/widgets/text.widget.dart';
 
 class FamilyPage extends HookConsumerWidget {
   const FamilyPage({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Wrap(
-      runSpacing: 20,
-      spacing: 20,
-      children: [
-        FamilyMemberCard(
-          icon: Icons.person,
-          title: "Fils",
-          onTap: () {},
-        ),
-        FamilyMemberCard(
-          icon: Icons.person,
-          title: "Fille",
-          onTap: () {},
-        ),
-        FamilyMemberCard(
-          icon: Icons.person,
-          title: "Femme",
-          onTap: () {},
-        ),
-        FamilyMemberCard(
-          icon: Icons.person,
-          title: "Frère",
-          onTap: () {},
-        ),
-        FamilyMemberCard(
-          icon: Icons.person,
-          title: "Soeur",
-          onTap: () {},
-        ),
-        FamilyMemberCard(
-          icon: Icons.person,
-          title: "Parents",
-          onTap: () {},
-        ),
-        FamilyMemberCard(
-          icon: Icons.person,
-          title: "Parenté",
-          onTap: () {},
-        ),
-      ],
-    );
-  }
-}
-
-class FamilyMemberCard extends ConsumerWidget {
-  final IconData icon;
-  final String title;
-  final int number;
-  final VoidCallback onTap;
-
-  const FamilyMemberCard({
-    super.key,
-    required this.icon,
-    required this.title,
-    this.number = 0,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return GestureDetector(
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.cardBackground,
-          borderRadius: AppDimensions.cardBorder,
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.primaryText.withValues(alpha: 0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+    return Container(
+      padding: AppDimensions.contentPadding,
+      width: double.infinity,
+      child: Column(
+        spacing: 70.0,
+        children: [
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: AppColors.cardIconBackground,
+              borderRadius: AppDimensions.cardBorder,
             ),
-          ],
-        ),
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Padding(
-              padding: AppDimensions.cardPadding,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                spacing: 15.0,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: AppDimensions.iconCardBorder,
-                      color: AppColors.cardIconBackground,
+            padding: AppDimensions.cardPadding,
+            child: Center(
+              child: AppText(
+                "Membre de la famille",
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.secondaryText,
                     ),
-                    padding: AppDimensions.contentPadding,
-                    child: Icon(
-                      icon,
-                      size: 50,
-                      color: AppColors.iconColor,
-                    ),
-                  ),
-                  AppText(
-                    title,
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: AppColors.secondaryText,
-                        ),
-                  ),
-                ],
               ),
             ),
-            Positioned(
-              top: 10,
-              right: -1,
-              child: Container(
-                padding: EdgeInsets.all(
-                  AppDimensions.verticalPadding * .3,
+          ),
+          Expanded(
+            child: Wrap(
+              //  runAlignment: WrapAlignment.center,
+              // crossAxisAlignment: WrapCrossAlignment.start,
+              //  alignment: WrapAlignment.spaceEvenly,
+              runSpacing: 10,
+              spacing: 10,
+              children: [
+                ItemCard(
+                  icon: Icons.boy, // ou Icons.person_outline
+                  title: "Fils",
+                  onTap: () {},
                 ),
-                decoration: BoxDecoration(
-                  color: AppColors.cardIconBackground,
-                  borderRadius: AppDimensions.iconCardBorder,
+                ItemCard(
+                  icon: Icons.girl, // ou Icons.person_outline
+                  title: "Fille",
+                  onTap: () {},
                 ),
-                child: AppText(
-                  number.toString(),
-                  style:
-                      Theme.of(context).textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w700),
+                ItemCard(
+                  icon: Icons.woman_rounded,
+                  title: "Femme",
+                  onTap: () {},
                 ),
-              ),
+                ItemCard(
+                  icon: Icons.accessibility_rounded,
+                  title: "Frère",
+                  onTap: () {},
+                ),
+                ItemCard(
+                  icon: Icons.accessibility_new_rounded,
+                  title: "Soeur",
+                  onTap: () {},
+                ),
+                ItemCard(
+                  icon: Icons.people_rounded,
+                  title: "Parents",
+                  onTap: () {},
+                ),
+                ItemCard(
+                  icon: Icons.account_tree_rounded,
+                  title: "Parenté",
+                  onTap: () {},
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

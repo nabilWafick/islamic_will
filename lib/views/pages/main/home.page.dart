@@ -49,7 +49,7 @@ class HomePage extends HookConsumerWidget {
                         IconButton(
                           onPressed: () {},
                           icon: const Icon(
-                            Icons.settings,
+                            Icons.settings_rounded,
                             size: AppDimensions.iconSize,
                             color: AppColors.buttonText,
                           ),
@@ -92,18 +92,18 @@ class HomePage extends HookConsumerWidget {
                   spacing: 20.0,
                   children: [
                     Expanded(
-                      child: ItemCard(
+                      child: MainItemCard(
                         title: "Bien",
                         value: "5M",
-                        icon: Icons.diamond,
+                        icon: Icons.diamond_rounded,
                         color: AppColors.cardBackground,
                       ),
                     ),
                     Expanded(
-                      child: ItemCard(
+                      child: MainItemCard(
                         title: "Dette",
                         value: "0",
-                        icon: Icons.trending_down,
+                        icon: Icons.trending_down_rounded,
                         color: AppColors.secondary,
                       ),
                     ),
@@ -144,13 +144,13 @@ class HomePage extends HookConsumerWidget {
                         child: Column(
                           spacing: 10.0,
                           children: [
-                            ItemCard(
+                            MainItemCard(
                               title: "Parenté",
                               value: "7",
                               icon: Icons.account_tree,
                               color: AppColors.cardBackground,
                             ),
-                            ItemCard(
+                            MainItemCard(
                               title: "Don",
                               value: "1",
                               icon: Icons.volunteer_activism_rounded,
@@ -173,28 +173,28 @@ class HomePage extends HookConsumerWidget {
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
                     children: const [
-                      ItemCard(
+                      MainItemCard(
                         title: "Bien",
                         value: "7",
-                        icon: Icons.diamond,
+                        icon: Icons.diamond_rounded,
                         color: AppColors.cardBackground,
                       ),
-                      ItemCard(
+                      MainItemCard(
                         title: "Dette",
                         value: "0",
-                        icon: Icons.trending_down,
+                        icon: Icons.trending_down_rounded,
                         color: AppColors.cardBackground,
                       ),
-                      ItemCard(
+                      MainItemCard(
                         title: "Volonté",
                         value: "1",
-                        icon: Icons.favorite,
+                        icon: Icons.favorite_rounded,
                         color: AppColors.cardBackground,
                       ),
-                      ItemCard(
+                      MainItemCard(
                         title: "Témoin",
                         value: "3",
-                        icon: Icons.groups_2,
+                        icon: Icons.groups_2_rounded,
                         color: AppColors.cardBackground,
                       ),
                     ],
@@ -210,7 +210,7 @@ class HomePage extends HookConsumerWidget {
   }
 }
 
-class ItemCard extends StatelessWidget {
+class MainItemCard extends StatelessWidget {
   final String title;
   final String value;
   final Color? titleColor;
@@ -218,7 +218,7 @@ class ItemCard extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-  const ItemCard({
+  const MainItemCard({
     super.key,
     required this.title,
     required this.value,
